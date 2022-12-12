@@ -8,4 +8,4 @@ It is a simple calculator to do 4 main arithmetic operations:
 - Multiply 2 numbers
 - Divide 2 numbers
 __________________________________________________________________
-The methods and classes are implemented using Functional Programming
+The methods and classes are implemented using Functional Programming.
