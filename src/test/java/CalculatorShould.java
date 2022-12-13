@@ -1,18 +1,18 @@
-import calculator.Calculator;
+import calculator.CalculatorImplementation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class CalculatorShould {
-    Calculator calculator;
+    CalculatorImplementation calculator;
     private String number1;
     private String number2;
     private String result;
 
     @BeforeEach
     void setUp() {
-        calculator = new Calculator();
+        calculator = new CalculatorImplementation();
         number1 = "12.34";
         number2 = "56.78";
         result = "0";

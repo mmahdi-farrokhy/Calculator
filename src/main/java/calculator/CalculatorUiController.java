@@ -4,7 +4,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class CalculatorUiController {
-    private Calculator calculator = new Calculator();
+    private final CalculatorImplementation calculator = new CalculatorImplementation();
     private static String number1 = "";
     private static String number2 = "";
     private static String result = "";
@@ -95,18 +95,18 @@ public class CalculatorUiController {
         }
     }
     public void addButtonPressed(){
-        opearationDetermination(OperationType.ADDITION);
+        operationDetermination(OperationType.ADDITION);
     }
     public void subtractButtonPressed(){
-        opearationDetermination(OperationType.SUBTRACTION);
+        operationDetermination(OperationType.SUBTRACTION);
     }
     public void multiplyButtonPressed(){
-        opearationDetermination(OperationType.MULTIPLICATION);
+        operationDetermination(OperationType.MULTIPLICATION);
     }
     public void divideButtonPressed(){
-        opearationDetermination(OperationType.DIVISION);
+        operationDetermination(OperationType.DIVISION);
     }
-    private void opearationDetermination(OperationType operationType) {
+    private void operationDetermination(OperationType operationType) {
         number1 = display.getText();
         display.clear();
         pointCounter = 0;
@@ -124,6 +124,7 @@ public class CalculatorUiController {
         else if (operation == OperationType.DIVISION)
             result = calculator.divide(number1, number2);
 
+        display.setText(result);
         equal = true;
         pointCounter = 0;
         display.clear();

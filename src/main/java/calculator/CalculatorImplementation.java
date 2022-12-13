@@ -4,7 +4,7 @@ import java.util.function.BinaryOperator;
 import java.util.function.DoubleFunction;
 import java.util.function.ToDoubleFunction;
 
-public class Calculator {
+public class CalculatorImplementation {
     private double number1;
     private double number2;
     private final ToDoubleFunction<String> toDouble = Convert::toDouble;
