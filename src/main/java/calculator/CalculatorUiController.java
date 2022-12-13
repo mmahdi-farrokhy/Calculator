@@ -11,7 +11,6 @@ public class CalculatorUiController {
     private static boolean equal = false;
     private static int pointCounter = 0;
     private static OperationType operation;
-
     public TextField display = new TextField();
     public Button seven = new Button();
     public Button eight = new Button();

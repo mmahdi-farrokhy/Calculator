@@ -9,7 +9,6 @@ public class Convert {
     public static String toString(double input){
         return String.valueOf(formatter.format(input));
     }
-
     public static double toDouble(String input) {
         return Double.parseDouble(input);
     }
