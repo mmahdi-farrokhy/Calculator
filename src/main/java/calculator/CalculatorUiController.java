@@ -29,13 +29,6 @@ public class CalculatorUiController {
     public Button equals = new Button();
     public Button point = new Button();
 
-    private enum OperationType{
-        ADDITION,
-        SUBTRACTION,
-        MULTIPLICATION,
-        DIVISION
-    }
-
     private void newNumber() {
         if(equal){
             display.clear();
