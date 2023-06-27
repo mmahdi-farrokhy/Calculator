@@ -1,8 +1,8 @@
-package calculator;
+package Utilities;
 
 import java.text.DecimalFormat;
 
-public class Convert {
+public class Converter {
 
     private static final DecimalFormat formatter = new DecimalFormat("0.00");
 

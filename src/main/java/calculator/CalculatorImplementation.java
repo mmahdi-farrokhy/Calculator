@@ -1,5 +1,7 @@
 package calculator;
 
+import Utilities.Converter;
+
 import java.util.function.BinaryOperator;
 import java.util.function.DoubleFunction;
 import java.util.function.ToDoubleFunction;
@@ -7,8 +9,8 @@ import java.util.function.ToDoubleFunction;
 public class CalculatorImplementation {
     private double number1;
     private double number2;
-    private final ToDoubleFunction<String> toDouble = Convert::toDouble;
-    private final DoubleFunction<String> toString = Convert::toString;
+    private final ToDoubleFunction<String> toDouble = Converter::toDouble;
+    private final DoubleFunction<String> toString = Converter::toString;
     private void initNumbers(String num1, String num2){
         try {
             number1 = toDouble.applyAsDouble(num1);
