@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -77,23 +78,27 @@ public class CalculatorController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        setOnActionMethods(zeroBtn, 10, () -> numberButtonPushed(zeroBtn));
-        setOnActionMethods(oneBtn, 10, () -> numberButtonPushed(oneBtn));
-        setOnActionMethods(twoBtn, 10, () -> numberButtonPushed(oneBtn));
-        setOnActionMethods(threeBtn, 10, () -> numberButtonPushed(oneBtn));
-        setOnActionMethods(fourBtn, 10, () -> numberButtonPushed(oneBtn));
-        setOnActionMethods(fiveBtn, 10, () -> numberButtonPushed(oneBtn));
-        setOnActionMethods(sixBtn, 10, () -> numberButtonPushed(oneBtn));
-        setOnActionMethods(sevenBtn, 10, () -> numberButtonPushed(oneBtn));
-        setOnActionMethods(eightBtn, 10, () -> numberButtonPushed(oneBtn));
-        setOnActionMethods(nineBtn, 10, () -> numberButtonPushed(oneBtn));
-        setOnActionMethods(clearBtn, 10, this::clearDisplayField);
-        setOnActionMethods(pointBtn, 10, this::applyFloatingPoint);
-        setOnActionMethods(addBtn, 10, this::applyAddition);
-        setOnActionMethods(subtractBtn, 10, this::applySubtraction);
-        setOnActionMethods(multiplyBtn, 10, this::applyMultiplication);
-        setOnActionMethods(divideBtn, 10, this::applyDivision);
-        setOnActionMethods(equalsBtn, 10, this::applyEquality);
+        Color numberColor = Color.valueOf("#6bc6a5");
+        Color operatorColor = Color.valueOf("#f9d162");
+        Color clearColor = Color.valueOf("#ef3a4f");
+
+        setOnActionMethods(zeroBtn, 10, numberColor, () -> numberButtonPushed(zeroBtn));
+        setOnActionMethods(oneBtn, 10, numberColor, () -> numberButtonPushed(oneBtn));
+        setOnActionMethods(twoBtn, 10, numberColor, () -> numberButtonPushed(twoBtn));
+        setOnActionMethods(threeBtn, 10, numberColor, () -> numberButtonPushed(threeBtn));
+        setOnActionMethods(fourBtn, 10, numberColor, () -> numberButtonPushed(fourBtn));
+        setOnActionMethods(fiveBtn, 10, numberColor, () -> numberButtonPushed(fiveBtn));
+        setOnActionMethods(sixBtn, 10, numberColor, () -> numberButtonPushed(sixBtn));
+        setOnActionMethods(sevenBtn, 10, numberColor, () -> numberButtonPushed(sevenBtn));
+        setOnActionMethods(eightBtn, 10, numberColor, () -> numberButtonPushed(eightBtn));
+        setOnActionMethods(nineBtn, 10, numberColor, () -> numberButtonPushed(nineBtn));
+        setOnActionMethods(clearBtn, 10, clearColor, this::clearDisplayField);
+        setOnActionMethods(pointBtn, 10, operatorColor, this::applyFloatingPoint);
+        setOnActionMethods(addBtn, 10, operatorColor, this::applyAddition);
+        setOnActionMethods(subtractBtn, 10, operatorColor, this::applySubtraction);
+        setOnActionMethods(multiplyBtn, 10, operatorColor, this::applyMultiplication);
+        setOnActionMethods(divideBtn, 10, operatorColor, this::applyDivision);
+        setOnActionMethods(equalsBtn, 10, operatorColor, this::applyEquality);
     }
 
     public void numberButtonPushed(Button numberButton) {
@@ -156,6 +161,5 @@ public class CalculatorController implements Initializable {
         displayField.setText(result);
         equal = true;
         pointIsAllowed = true;
-        displayField.clear();
     }
 }
